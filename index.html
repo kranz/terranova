@@ -133,6 +133,44 @@
             onmouseover="this.style.transform='scale(5)';" onmouseout="this.style.transform='none';">
             <img class="g-width-130 g-height-130 g-brd-around g-brd-10 g-brd-white g-rounded-50x mx-auto g-mb-20 g-mb-25--md" src="assets/img-temp/500x500/img2.jpg" alt="Image description"
             onmouseover="this.style.transform='scale(5)';" onmouseout="this.style.transform='none';">
+
+              <!-- Countdown -->
+              <div class="js-countdown text-center u-countdown-v1 g-color-white"
+                   data-end-date="2019/02/28"
+                   data-month-format="%m"
+                   data-days-format="%d"
+                   data-hours-format="%H"
+                   data-minutes-format="%M"
+                   data-seconds-format="%S">
+                <div class="d-inline-block g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-pa-15-20-10 g-mx-15 g-mb-30">
+                  <div class="js-cd-month g-line-height-1 g-font-size-40 g-font-weight-700 g-mb-2"></div>
+                  <span class="text-uppercase g-color-white-opacity-0_7 g-font-size-12">Mesi</span>
+                </div>
+
+                <div class="d-inline-block g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-pa-15-20-10 g-mx-15 g-mb-30">
+                  <div class="js-cd-days g-line-height-1 g-font-size-40 g-font-weight-700 g-mb-2"></div>
+                  <span class="text-uppercase g-color-white-opacity-0_7 g-font-size-12">Giorni</span>
+                </div>
+
+                <div class="d-inline-block g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-pa-15-20-10 g-mx-15 g-mb-30">
+                  <div class="js-cd-hours g-line-height-1 g-font-size-40 g-font-weight-700 g-mb-2"></div>
+                  <span class="text-uppercase g-color-white-opacity-0_7 g-font-size-12">Ore</span>
+                </div>
+
+                <div class="d-inline-block g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-pa-15-20-10 g-mx-15 g-mb-30">
+                  <div class="js-cd-minutes g-line-height-1 g-font-size-40 g-font-weight-700 g-mb-2"></div>
+                  <span class="text-uppercase g-color-white-opacity-0_7 g-font-size-12">Minuti</span>
+                </div>
+
+                <div class="d-inline-block g-bg-white-opacity-0_05 g-brd-around g-brd-white-opacity-0_3 g-pa-15-20-10 g-mx-15 g-mb-30">
+                  <div class="js-cd-seconds g-line-height-1 g-font-size-40 g-font-weight-700 g-mb-2"></div>
+                  <span class="text-uppercase g-color-white-opacity-0_7 g-font-size-12">Secondi</span>
+                </div>
+              </div>
+              <!-- End Countdown -->
+
+
+
             <p class="text-uppercase g-line-height-1 g-font-weight-700 g-font-size-default g-font-size-20--md g-color-white g-mb-10 g-mb-15--md">Juicy steak with special sauce</p>
             <p class="g-line-height-1_1 g-font-weight-100 g-font-size-default g-color-white g-mb-10 g-mb-20--md">Sed feugiat porttitor nunc, non dignissim ipsum vestibulum in.</p>
             <p class="text-uppercase g-font-weight-700 g-font-size-16 g-color-primary mb-0">$9.00</p>
@@ -2603,6 +2641,7 @@
     <!-- JS Implementing Plugins -->
     <script src="assets/vendor/master-slider/source/assets/js/masterslider.min.js"></script>
     <script src="assets/vendor/cubeportfolio-full/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="assets/vendor/jquery.countdown.min.js"></script>
     <script src="assets/vendor/slick-carousel/slick/slick.js"></script>
     <script src="assets/vendor/gmaps/gmaps.min.js"></script>
 
@@ -2614,6 +2653,7 @@
     <script src="assets/js/components/hs.tabs.js"></script>
     <script src="assets/js/components/hs.carousel.js"></script>
     <script src="assets/js/components/hs.cubeportfolio.js"></script>
+    <script src="assets/js/components/hs.countdown.js"></script>
     <script src="assets/js/components/gmap/hs.map.js"></script>
     <script src="assets/js/components/hs.go-to.js"></script>
 
@@ -2670,6 +2710,17 @@
 
         // initialization of go to section
         $.HSCore.components.HSGoTo.init('.js-go-to');
+
+        // initialization of countdown
+        var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+          yearsElSelector: '.js-cd-years',
+          monthElSelector: '.js-cd-month',
+          daysElSelector: '.js-cd-days',
+          hoursElSelector: '.js-cd-hours',
+          minutesElSelector: '.js-cd-minutes',
+          secondsElSelector: '.js-cd-seconds'
+        });
+
 
         $('#ourFood [role="tablist"] .nav-link').on('click', function () {
           setTimeout(function () {
