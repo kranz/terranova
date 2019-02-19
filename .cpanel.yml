@@ -1,8 +1,8 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/sshjciqa/public_html/terranova/.
-    - /bin/cp favicon.ico $DEPLOYPATH
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp README.txt $DEPLOYPATH
-    - /bin/cp -R assets $DEPLOYPATH/assets
+    - export DEPLOYPATH=/home/sshjciqa/public_html/terranova
+    - /bin/cp favicon.ico $DEPLOYPATH/favicon.ico
+    - /bin/cp index.html $DEPLOYPATH/index.html
+    - /bin/cp README.txt $DEPLOYPATH/README.txt
+    - /bin/cp -Ru assets $DEPLOYPATH/
